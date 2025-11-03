@@ -1,9 +1,9 @@
 {
-  "name": "my-json-api",
+  "name": "repo-api",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "json-server --watch db.json --port 9000"
+    "start": "node server.js"
   },
   "dependencies": {
     "json-server": "^0.17.4"

@@ -1,10 +1,11 @@
 {
-  "name": "my-json-server",
+  "name": "json-server-api",
   "version": "1.0.0",
+  "main": "server.js",
   "scripts": {
-    "start": "json-server --watch db.json --port 9000"
+    "start": "node server.js"
   },
   "dependencies": {
-    "json-server": "^0.17.1"
+    "json-server": "^0.17.4"
   }
 }

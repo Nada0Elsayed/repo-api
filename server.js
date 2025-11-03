@@ -4,6 +4,12 @@ const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
+
+// ✅ إضافة مسار رئيسي للجاهزية
+server.get("/", (req, res) => {
+  res.send("✅ JSON Server is Live and Running!");
+});
+
 server.use(router);
 
 // استخدام بورت Railway

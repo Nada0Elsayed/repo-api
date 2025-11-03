@@ -8,6 +8,8 @@ server.use(router);
 
 // استخدام بورت Railway
 const PORT = process.env.PORT || 9000;
-server.listen(PORT, () => {
+
+// الاستماع على البورت وعلى كل الشبكات (مهم لرفع السيرفر)
+server.listen(PORT, "0.0.0.0", () => {
   console.log(`✅ JSON Server is running on port ${PORT}`);
 });

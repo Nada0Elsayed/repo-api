@@ -3,19 +3,19 @@ const server = jsonServer.create();
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 
+// Middlewares
 server.use(middlewares);
 
-// ✅ إضافة مسار رئيسي للجاهزية
+// Health Check (مهم جدًا لRailway)
 server.get("/", (req, res) => {
-  res.send("✅ JSON Server is Live and Running!");
+  res.status(200).send("✅ JSON Server is running on Railway!");
 });
 
+// Router
 server.use(router);
 
-// استخدام بورت Railway
-const PORT = process.env.PORT || 9000;
-
-// الاستماع على البورت وعلى كل الشبكات (مهم لرفع السيرفر)
+// Listen on 0.0.0.0 and dynamic port
+const PORT = process.env.PORT || 8080;
 server.listen(PORT, "0.0.0.0", () => {
   console.log(`✅ JSON Server is running on port ${PORT}`);
 });
